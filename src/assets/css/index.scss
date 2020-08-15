@@ -1,0 +1,43 @@
+@mixin list {
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px 20px;
+}
+
+//list-one
+#product-list-one {
+  background: #fff8b1;
+  @include list;
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      .price {
+        font-weight: bold;
+        color: #e8800c;
+      }
+    }
+  }
+}
+
+//list-two
+#product-list-two {
+  background: #d1e4ff;
+  @include list;
+  ul {
+    li {
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      .price {
+        font-weight: bold;
+        color: #860ce8;
+        display: block;
+      }
+    }
+  }
+}
