@@ -58,8 +58,6 @@ export default {
       this.item.vdrWidth = Math.floor(
         (this.item.e_time - this.item.s_time) * this.unit
       );
-      window.console.log(this.item.vdrWidth);
-
       this.drawBackground();
 
       if (this.item.is_audio == 1) {

@@ -1,18 +1,32 @@
 // data - 原始数组  obj - 添加的obj  return data
-export const addPiece=function(data,obj){
-    for(let array of data){
-        if(array.length == 0){
-            array.push(obj)
-            break
+export const addPiece = function (data, obj) {
+    let trackAdd = false;
+    let track = null;
+    let time = obj.e_time - obj.s_time
+    for (let trackArr of data) {
+        if (track) break
+        if (trackArr.length == 0) {
+            trackArr.push(obj);
+            trackAdd = false;
+            break;
         }
-        for(let item of array){
-            if(item.s_ruler<obj.time){
-                data.push([obj])
+
+        for (let video of trackArr) {
+            if (video.s_ruler < time) {
+                trackAdd = true;
                 break;
-            }else{
-                array.push(obj)
+            } else if (!track) {
+                track = trackArr;
             }
         }
-    }    
+    }
+
+    if (trackAdd) {
+        let track = [];
+        track.push(obj);
+        data.unshift(track);
+    } else if (track) {
+        track.unshift(obj);
+    }
     return data
 }
