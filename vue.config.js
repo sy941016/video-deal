@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+    lintOnSave:false,
     devServer: {
         open: process.platform === 'darwin',
         disableHostCheck: true,
