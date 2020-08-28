@@ -38,6 +38,11 @@ export const constantRoutes = [
         component: () => import('@/pages/shop'),
     },
     {
+        path: '/swiper',
+        name: 'swiper',
+        component: () => import('@/pages/swiper'),
+    },
+    {
         path: '/404',
         component: () => import('@/pages/error'),
     }

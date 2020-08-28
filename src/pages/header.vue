@@ -1,7 +1,6 @@
 <template>
   <header>
     <el-menu
-      default-active="1"
       mode="horizontal"
       background-color="#545c64"
       text-color="#fff"
@@ -12,6 +11,9 @@
       </el-menu-item>
       <el-menu-item index="2">
         <router-link to="/shop">商品</router-link>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <router-link to="/swiper">swiper</router-link>
       </el-menu-item>
       <el-submenu index="3" style="float:right">
         <template slot="title">个人中心</template>
@@ -32,10 +34,10 @@ export default {
     async logout() {
       await this.$store.dispatch("user/logout");
       this.$router.push(`/login`);
-    }
+    },
   },
   computed: {
-    ...mapGetters(["name"])
-  }
+    ...mapGetters(["name"]),
+  },
 };
 </script>
